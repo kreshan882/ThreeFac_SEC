@@ -9,7 +9,7 @@ package com.mcs.kreshna;
  * @author kreshan88
  */
 public class Message {
-    public String PAN;
-    public String CL_PIN;
-    public String EN_PINB;
+    public String imei;
+    public String enc_msg;
+    //public String res;
 }

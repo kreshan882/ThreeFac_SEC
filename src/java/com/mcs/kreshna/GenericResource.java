@@ -6,7 +6,6 @@ package com.mcs.kreshna;
 
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.UriInfo;
-import javax.ws.rs.PathParam;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
@@ -20,7 +19,7 @@ import javax.ws.rs.core.MediaType;
  *
  * @author kreshan88
  */
-@Path("generic")
+@Path("/")
 public class GenericResource {
 
     @Context
@@ -32,27 +31,6 @@ public class GenericResource {
     public GenericResource() {
     }
 
-    
-    @POST
-    @Consumes(MediaType.APPLICATION_JSON)
-    @Produces(MediaType.TEXT_PLAIN)
-    @Path("translate_clearPIN")
-    public String translate_clearPIN(final Message m){
-   
-    String ePINB="ok";
- 
-        try {          
-                System.out.println("Translated result : "+m.CL_PIN+ m.PAN);
-                
-                System.out.println("Translated result : "+m.CL_PIN+ m.PAN);
-              
-        }catch (Exception ex) {
-            ex.printStackTrace();
-            System.out.println("Error found in PINTranslate1");
-        }
-    
-        return ePINB;
-    }
     /**
      * Retrieves representation of an instance of com.mcs.kreshna.GenericResource
      * @return an instance of java.lang.String
@@ -72,5 +50,27 @@ public class GenericResource {
     @PUT
     @Consumes("application/xml")
     public void putXml(String content) {
+    }
+    
+    
+    @POST
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.TEXT_PLAIN)
+    @Path("mobile_Reg")
+    public String mobile_Reg(final Message m){
+        System.out.println("kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk");
+    String ePINB="ok";
+ 
+        try {          
+                System.out.println("Translated result : "+m.imei+ m.enc_msg);
+                
+
+              
+        }catch (Exception ex) {
+            ex.printStackTrace();
+            System.out.println("Error found in PINTranslate1");
+        }
+    
+        return ePINB;
     }
 }
