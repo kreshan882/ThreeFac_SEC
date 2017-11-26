@@ -58,19 +58,19 @@ public class GenericResource {
     @Produces(MediaType.TEXT_PLAIN)
     @Path("mobile_Reg")
     public String mobile_Reg(final Message m){
-        System.out.println("kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk");
-    String ePINB="ok";
+
+        String res="000";
  
         try {          
-                System.out.println("Translated result : "+m.imei+ m.enc_msg);
+                System.out.println("recive from mobile : "+m.imei+ m.enc_msg);
                 
 
               
         }catch (Exception ex) {
             ex.printStackTrace();
-            System.out.println("Error found in PINTranslate1");
+            System.out.println("Error found in registration");
         }
     
-        return ePINB;
+        return res;
     }
 }
