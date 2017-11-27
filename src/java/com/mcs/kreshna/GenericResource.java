@@ -62,7 +62,7 @@ public class GenericResource {
         String res="000";
  
         try {          
-                System.out.println("recive from mobile : "+m.imei+ m.enc_msg);
+                System.out.println("recive from mobile :  "+m.imei+ m.enc_msg);
                 
 
               
