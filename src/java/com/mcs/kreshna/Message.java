@@ -9,7 +9,7 @@ package com.mcs.kreshna;
  * @author kreshan88
  */
 public class Message {
-    public String imei;
+    //public String imei;
     public String enc_msg;
     //public String res;
 }
