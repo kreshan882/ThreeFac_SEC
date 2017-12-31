@@ -67,8 +67,9 @@ public class GenericResource {
 
               
         }catch (Exception ex) {
-            ex.printStackTrace();
             System.out.println("Error found in registration");
+            ex.printStackTrace();
+            
         }
     
         return res;
