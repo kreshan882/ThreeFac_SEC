@@ -1,0 +1,16 @@
+1) web tables
+
+CREATE TABLE `web_user` (
+  `USERNAME` varchar(20) NOT NULL,
+  `NAME` varchar(45) DEFAULT NULL,
+  `PROFILE_ID` varchar(45) DEFAULT NULL,
+  `STATUS` varchar(45) DEFAULT NULL,
+  `PASSWORD` varchar(45) DEFAULT NULL,
+  `IMEI` varchar(45) DEFAULT NULL,
+  `EMAIL` varchar(45) DEFAULT NULL,
+  `MOBILE` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`USERNAME`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
+2) seq tables

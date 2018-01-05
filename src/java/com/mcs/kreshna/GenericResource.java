@@ -21,7 +21,7 @@ import javax.ws.rs.core.MediaType;
  */
 @Path("/")
 public class GenericResource {
-
+    private static boolean loginCheck=false;
     @Context
     private UriInfo context;
 
@@ -60,18 +60,57 @@ public class GenericResource {
     public String mobile_Reg(final Message m){
 
         String res="000";
- 
         try {          
-                System.out.println("recive from mobile :  "+ m.enc_msg);
-                
-
-              
+                System.out.println("recive from mobile :  "+ m.enc_msg);    
         }catch (Exception ex) {
             System.out.println("Error found in registration");
             ex.printStackTrace();
             
         }
     
+        return res;
+    }
+    
+    @POST
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.TEXT_PLAIN)
+    @Path("send_qr_detail")
+    public String send_qr_detail(final Message m){
+
+        String res="000";
+        try {          
+                System.out.println("QR cord :  "+ m.enc_msg);  
+                loginCheck=true;
+        }catch (Exception ex) {
+            System.out.println("Error found in registration");
+            ex.printStackTrace();
+            
+        }
+        return res;
+    }
+    
+        @POST
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.TEXT_PLAIN)
+    @Path("login_validate")
+    public String login_validate(final Message m){
+
+        String res="001";
+        try {          
+                System.out.println("login validate :  "+ m.enc_msg);  
+                System.out.println("loginCheck :  "+ loginCheck);
+                if(loginCheck){
+                    System.out.println("Login success");
+                    res="000";
+                }else{
+                    System.out.println("Login fail");
+                    res="002";
+                }
+        }catch (Exception ex) {
+            System.out.println("Error found in registration");
+            ex.printStackTrace();
+            
+        }
         return res;
     }
 }
