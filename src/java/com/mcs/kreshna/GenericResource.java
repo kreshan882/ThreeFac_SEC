@@ -89,22 +89,23 @@ public class GenericResource {
         return res;
     }
     
-        @POST
-    @Consumes(MediaType.APPLICATION_JSON)
+    @POST
+    @Consumes(MediaType.TEXT_PLAIN)
     @Produces(MediaType.TEXT_PLAIN)
     @Path("login_validate")
-    public String login_validate(final Message m){
+    public String login_validate(String m){
 
         String res="001";
         try {          
-                System.out.println("login validate :  "+ m.enc_msg);  
+                System.out.println("login validate :  "+ m);  
                 System.out.println("loginCheck :  "+ loginCheck);
+                loginCheck=true;
                 if(loginCheck){
                     System.out.println("Login success");
                     res="000";
                 }else{
                     System.out.println("Login fail");
-                    res="002";
+                    res="001";
                 }
         }catch (Exception ex) {
             System.out.println("Error found in registration");
